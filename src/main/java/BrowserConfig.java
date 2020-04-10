@@ -26,7 +26,7 @@ public class BrowserConfig {
             case "firefox":
                 FirefoxOptions fo = new FirefoxOptions();
                 fo.setPageLoadStrategy(NORMAL);
-                fo.addArguments("--private", "window-size=1024,768");
+                fo.addArguments("--private", "--window-size=1024,768");
                 driver = new FirefoxDriver(fo);
                 break;
         }

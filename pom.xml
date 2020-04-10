@@ -133,7 +133,7 @@
                             <configuration combine.self="append">
                                 <systemPropertyVariables>
                                     <browser.name>chrome</browser.name>
-                                    <webdriver.chrome.driver>./driver/chromedriver.exe</webdriver.chrome.driver>
+<!--                                    <webdriver.chrome.driver>./driver/chromedriver.exe</webdriver.chrome.driver>-->
                                 </systemPropertyVariables>
                             </configuration>
                         </plugin>
@@ -154,7 +154,7 @@
                             <configuration combine.self="append">
                                 <systemPropertyVariables>
                                     <browser.name>firefox</browser.name>
-                                    <webdriver.gecko.driver>./driver/geckodriver.exe</webdriver.gecko.driver>
+<!--                                    <webdriver.gecko.driver>./driver/geckodriver.exe</webdriver.gecko.driver>-->
                                 </systemPropertyVariables>
                             </configuration>
                         </plugin>

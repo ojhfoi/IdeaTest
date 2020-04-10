@@ -1,3 +1,5 @@
+import com.codeborne.selenide.WebDriverRunner;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,6 +19,7 @@ public class BrowserConfig {
         String browser = System.getProperty("browser.name");
         switch (browser){
             case "chrome":
+                WebDriverManager.chromedriver().setup();
                 ChromeOptions co = new ChromeOptions();
                 co.setPageLoadStrategy(NORMAL);
                 co.addArguments("--incognito", "--window-size=1024,768");
@@ -24,6 +27,7 @@ public class BrowserConfig {
                 break;
 
             case "firefox":
+                WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions fo = new FirefoxOptions();
                 fo.setPageLoadStrategy(NORMAL);
                 fo.addArguments("--private", "--window-size=1024,768");

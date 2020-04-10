@@ -15,6 +15,7 @@ public class OpenSite {
         try {
 
             getWebDriver().navigate().to("http://otus.ru");
+            System.out.println("Site is open! Site title:" + getWebDriver().getTitle());
 
         } catch (Throwable throwable) {
             Assert.assertTrue(false, "Can't open site becouse: \n" + throwable.getCause());

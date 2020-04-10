@@ -5,8 +5,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.codeborne.selenide.WebDriverRunner.setWebDriver;
 import static org.openqa.selenium.PageLoadStrategy.NORMAL;
 
@@ -14,7 +16,7 @@ public class BrowserConfig {
 
     private static WebDriver driver = null;
 
-    @Test
+    @Test(description = "SetUp driver")
     public void InitalBrowser() {
         String browser = System.getProperty("browser.name");
         switch (browser){
@@ -37,6 +39,13 @@ public class BrowserConfig {
 
         setWebDriver(driver);
 
+    }
+
+    @AfterSuite(description = "Close browser and driver")
+    public void CloseDriver() {
+        if (getWebDriver() != null) {
+            getWebDriver().quit();
+        }
     }
 
 }

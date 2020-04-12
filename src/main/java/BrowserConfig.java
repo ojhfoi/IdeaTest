@@ -1,4 +1,3 @@
-import com.codeborne.selenide.WebDriverRunner;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,6 +10,7 @@ import org.testng.annotations.Test;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.codeborne.selenide.WebDriverRunner.setWebDriver;
 import static org.openqa.selenium.PageLoadStrategy.NORMAL;
+
 
 public class BrowserConfig {
 

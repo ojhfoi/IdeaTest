@@ -2,7 +2,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="MyTest" parallel="none" verbose="1">
 
-    
     <test name="Browser initialization">
         <classes>
             <class name="BrowserConfig"/>

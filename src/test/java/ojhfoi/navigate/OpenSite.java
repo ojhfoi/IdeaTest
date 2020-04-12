@@ -1,12 +1,11 @@
 package ojhfoi.navigate;
 
-import com.codeborne.selenide.WebDriverRunner;
+import ojhfoi.navigate.config.config;
+import org.aeonbits.owner.ConfigFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static java.lang.Thread.sleep;
 
 public class OpenSite {
 
@@ -14,7 +13,9 @@ public class OpenSite {
     public void OpenSite() throws Throwable{
         try {
 
-            getWebDriver().navigate().to("http://otus.ru");
+            config cfg = ConfigFactory.create(config.class);
+
+            getWebDriver().navigate().to(cfg.hostname());
             System.out.println("Site is open! Site title:" + getWebDriver().getTitle());
 
         } catch (Throwable throwable) {

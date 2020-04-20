@@ -96,51 +96,11 @@
             <artifactId>influxdb-java</artifactId>
             <version>2.17</version>
         </dependency>
+        <dependency>
+            <groupId>ru.stqa.selenium</groupId>
+            <artifactId>webdriver-factory</artifactId>
+            <version>4.4</version>
+        </dependency>
     </dependencies>
-
-    <profiles>
-        <profile>
-            <id>chrome</id>
-            <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <artifactId>maven-surefire-plugin</artifactId>
-                            <configuration combine.self="append">
-                                <systemPropertyVariables>
-                                    <browser.name>chrome</browser.name>
-<!--                                    <webdriver.chrome.driver>./driver/chromedriver.exe</webdriver.chrome.driver>-->
-                                </systemPropertyVariables>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
-            </build>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-        <profile>
-            <id>firefox</id>
-            <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <artifactId>maven-surefire-plugin</artifactId>
-                            <configuration combine.self="append">
-                                <systemPropertyVariables>
-                                    <browser.name>firefox</browser.name>
-<!--                                    <webdriver.gecko.driver>./driver/geckodriver.exe</webdriver.gecko.driver>-->
-                                </systemPropertyVariables>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
-            </build>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-        </profile>
-    </profiles>
     
 </project>

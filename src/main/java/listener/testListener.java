@@ -51,7 +51,7 @@ public class testListener implements ITestListener, ISuiteListener, IInvokedMeth
                .tag("result", status)
                .addField("duration", (result.getEndMillis() - result.getStartMillis()))
                .build();
-       InfSend.send(point);
+//       InfSend.send(point);
     }
 
 }

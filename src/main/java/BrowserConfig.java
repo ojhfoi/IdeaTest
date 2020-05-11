@@ -1,7 +1,7 @@
 import com.codeborne.selenide.webdriver.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.codeborne.selenide.WebDriverRunner.setWebDriver;
@@ -11,11 +11,11 @@ public class BrowserConfig extends WebDriverFactory {
 
     private static WebDriver driver = null;    
 
-    @BeforeSuite
+    @Test
     public void CreateDriver(){
 //        String br = System.getProperty("browser").toUpperCase();
 //        if (br == null){
-//            br = "chrome";
+//            br = "CHROME";
 //        }
         String br = "CHROME";
         setWebDriver(browser.valueOf(br).create());

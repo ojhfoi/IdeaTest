@@ -15,9 +15,12 @@
     </test>
 
     <test name="OpenSite">
-        <packages>
-            <package name="ojhfoi.navigate" />
-        </packages>
+<!--        <packages>-->
+<!--            <package name="ojhfoi.navigate" />-->
+<!--        </packages>-->
+        <classes>
+            <class name="ojhfoi.navigate.OpenSite"/>
+        </classes>
     </test>
 
 

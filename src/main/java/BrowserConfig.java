@@ -18,7 +18,7 @@ public class BrowserConfig extends WebDriverFactory {
 //            br = "CHROME";
 //        }
         String br = "CHROME";
-        setWebDriver(browser.valueOf(br).create());
+        setWebDriver(browser.CHROME.create());
     }
 
     @AfterSuite(description = "Close browser and driver")

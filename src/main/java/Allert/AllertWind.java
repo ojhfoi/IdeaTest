@@ -1,6 +1,6 @@
 package Allert;
 
-import static Waiting.waiting.WaitLoadPage;
+import static ojhfoi.Waiting.waiting.WaitLoadPage;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class AllertWind {

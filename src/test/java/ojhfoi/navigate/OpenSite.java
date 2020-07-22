@@ -1,7 +1,6 @@
 package ojhfoi.navigate;
 
 import Allert.AllertWind;
-import check.myElemCheck;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import ojhfoi.navigate.config.config;
@@ -10,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static Waiting.waiting.WaitLoadPage;
+import static ojhfoi.Waiting.waiting.WaitLoadPage;
 import static check.myElemCheck.myCheck;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;

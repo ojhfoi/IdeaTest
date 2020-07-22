@@ -1,4 +1,4 @@
-package Waiting;
+package ojhfoi.Waiting;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

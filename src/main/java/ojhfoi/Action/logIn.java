@@ -1,8 +1,6 @@
 package ojhfoi.Action;
 
 import ojhfoi.Waiting.waiting;
-import ojhfoi.pageObject.loginPage;
-import ojhfoi.pageObject.mainPage;
 
 public class logIn {
 

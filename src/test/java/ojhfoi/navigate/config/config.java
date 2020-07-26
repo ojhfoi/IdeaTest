@@ -8,4 +8,5 @@ public interface config extends Config {
     @Key("server.url")
     String hostname();
 
+
 }

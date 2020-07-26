@@ -1,4 +1,4 @@
-package ojhfoi.pageObject;
+package ojhfoi.habr.pageObject;
 
 import org.openqa.selenium.By;
 

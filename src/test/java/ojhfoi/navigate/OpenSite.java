@@ -4,6 +4,7 @@ import Allert.AllertWind;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import ojhfoi.navigate.config.config;
+import ojhfoi.tsum.pageObject.TsumMainPage;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -36,7 +37,6 @@ public class OpenSite {
     @Test(description = "Открываем категорию Смартфоны", priority = 1)
     public void MoveToMob() throws Throwable{
         try {
-
             WaitLoadPage();
 
             //Проверяем, что появилось ок подтверждения города

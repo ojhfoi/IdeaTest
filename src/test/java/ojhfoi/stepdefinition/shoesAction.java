@@ -1,5 +1,6 @@
 package ojhfoi.stepdefinition;
 
+import com.codeborne.selenide.Condition;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -9,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static ojhfoi.tsum.pageObject.shoesPage.*;
 
@@ -45,15 +47,6 @@ public class shoesAction {
     @And("choose sneakers category")
     public void ChooseSneakers(){
         $(sneakers).click();
-    }
-
-    /**
-     * Set shoes size at 39
-     */
-    @And("choose shoes size 39")
-    public void ChooseSize(){
-        $(size).click();
-        $(sizeChoose).click();
     }
 
 }

@@ -1,8 +1,9 @@
 package ojhfoi.stepdefinition;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import ojhfoi.tsum.pageObject.TsumMainPage;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -69,6 +70,22 @@ public class mainAction {
     public void search(String text){
         $(search).click();
         $(search).sendKeys(text, Keys.ENTER);
+    }
+
+    /**
+     * Click on user personal cabinet button
+     */
+    @Given("go to user personal cabinet")
+    public void goToAuthPage(){
+        $(userCab).click();
+    }
+
+    /**
+     * go to gift card page
+     */
+    @When("choose gift card product")
+    public void goToGiftCart(){
+        $(giftCard).click();
     }
 
 }

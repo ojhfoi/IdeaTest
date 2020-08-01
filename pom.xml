@@ -10,12 +10,15 @@
 
     <properties>
         <maven.compiler>3.8.1</maven.compiler>
-        <maven-surefire.version>3.0.0-M4</maven-surefire.version>
+        <maven-surefire.version>2.22.2</maven-surefire.version>
         <aspectj.version>1.9.5</aspectj.version>
         <testng.version>7.0.0</testng.version>
         <selenium.java.version>LATEST</selenium.java.version>
         <selenide.version>LATEST</selenide.version>
         <allure.version>2.13.2</allure.version>
+        <gherkin.version>2.12.2</gherkin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <build>
@@ -38,10 +41,11 @@
                         <allure.link.mylink.pattern>https://testrail-url?/cases/view/{}</allure.link.mylink.pattern>
                         <allure.link.issue.pattern>https://jira-url/{}</allure.link.issue.pattern>
                         <allure.link.tms.pattern>https://to.define/{}</allure.link.tms.pattern>
-                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                        <allure.results.directory>${project.build.directory}/target/allure-results</allure.results.directory>
                     </systemPropertyVariables>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        -Dcucumber.options="--plugin io.qameta.allure.cucumber5jvm.AllureCucumber4Jvm"
                     </argLine>
                 </configuration>
                 <dependencies>
@@ -156,11 +160,18 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
             <version>2.13.5</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>ru.yandex.qatools.allure</groupId>
             <artifactId>allure-cucumber-jvm-adaptor</artifactId>
             <version>1.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber5-jvm</artifactId>
+            <version>2.13.5</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- Cucumber -->
@@ -168,6 +179,16 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>6.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>6.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java8</artifactId>
+            <version>6.3.0</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -181,12 +202,39 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>gherkin</artifactId>
+            <version>${gherkin.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>5.4.18.Final</version>
         </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-java-commons</artifactId>
+            <version>2.13.5</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
+
+
+    <reporting>
+        <excludeDefaults>true</excludeDefaults>
+        <plugins>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version>
+                <configuration>
+                    <reportVersion>${allure.version}</reportVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
 
 </project>

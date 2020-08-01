@@ -1,23 +1,22 @@
 package ojhfoi.runner;
 
 import com.codeborne.selenide.testng.SoftAsserts;
+import cucumber.runtime.model.CucumberFeature;
+import gherkin.events.PickleEvent;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import io.qameta.allure.testng.AllureTestNg;
+import io.cucumber.testng.TestNGCucumberRunner;
 import listener.testListener;
-import org.junit.runner.RunWith;
-import org.testng.annotations.Listeners;
-
-import java.io.IOException;
+import org.testng.annotations.*;
 
 //@RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources",
-        glue = {"src/test/java/ojhfoi", "src/main/java"},
-        tags = "@all",
-        plugin = {"pretty"}
+        glue = {"ojhfoi.stepdefinition", "ojhfoi.navigate", "ojhfoi.tears"},
+        tags = "@tsum_gift",
+        plugin = {"pretty", "json:result/report/report.json"}
 )
-@Listeners({testListener.class, AllureTestNg.class, SoftAsserts.class})
+@Listeners({testListener.class, SoftAsserts.class})
 public class runner extends AbstractTestNGCucumberTests {
 
 }

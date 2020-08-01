@@ -1,4 +1,4 @@
-@tsum_test2
+@tsum_bag
 
   Feature: Test 2. Check bag products
 

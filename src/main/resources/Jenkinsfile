@@ -1,0 +1,28 @@
+#!groovy
+
+node{
+    stage("checkout"){
+        try{
+            tool name: 'allure', type: 'allure'
+            tool name: 'jdk', type: 'jdk'
+            tool name: 'mvn', type: 'maven'
+            git branch: 'origin/lesson-tsum', credentialsId: 'e2497f2b-f8b6-4edc-ad90-b8e335836e28', url: 'https://github.com/ojhfoi/IdeaTest.git'
+        }catch (e) {
+            echo 'Checkout finish with error'
+        }
+    }
+    stage("Run test"){
+        try{
+            withMaven(jdk: 'jdk', maven: 'mvn') {
+                sh 'mvn clean test'
+            }
+        }catch (e) {
+            echo "Run test failure"
+        }
+    }
+    stage("Allure Report"){
+        try{
+        }catch (e) {
+        }
+    }
+}

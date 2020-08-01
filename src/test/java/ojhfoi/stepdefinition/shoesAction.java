@@ -21,15 +21,17 @@ public class shoesAction {
      * Go to page
      * @param numPage - number of page
      */
-    @Given("go to page (\\d+)")
+    @Given("go to page {int}")
     public void goToPage(int numPage) throws Exception{
+        waiting.WaitLoadPage();
         List<WebElement> pageList = getWebDriver().findElements(changePage);
         if (pageList.size()!=0){
             pageList.get(numPage).click();
+            waiting.WaitLoadPage();
         }else{
             System.out.println("List of goods is empty!");
         }
-        waiting.WaitLoadPage();
+
     }
 
     /**

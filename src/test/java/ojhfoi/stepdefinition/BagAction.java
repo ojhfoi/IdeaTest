@@ -31,7 +31,7 @@ public class BagAction {
      * Sort products
      * @param sortBy - by sort?
      */
-    @Then("sort good by \"([^\"]*)\"")
+    @Then("sort good by {string}")
     public void sortGoods(String sortBy) throws Exception{
         $(sort).click();
         waiting.WaitLoadPage();
@@ -43,15 +43,16 @@ public class BagAction {
      * Go to product page
      * @param productNum - number of products on page
      */
-    @Then("choose products on page by (\\d+) number")
+    @Then("choose products on page by {int} number")
     public void ChooseProductByNum(int productNum) throws Exception{
+        waiting.WaitLoadPage();
         List<WebElement> productList = getWebDriver().findElements(product);
         if (productList.isEmpty()){
             System.out.println("List of products is empty!");
         }else{
-            productList.get(productNum).click();
+            $$(product).get(productNum).should(Condition.appear).click();
+            waiting.WaitLoadPage();
         }
-        waiting.WaitLoadPage();
     }
 
     /**
@@ -66,10 +67,11 @@ public class BagAction {
             System.out.println("Gallery is empty!");
         }else{
             while (i < galerySize.size()){
-                $(galeryArrow).click();
+                $(galeryArrow).should(Condition.appear).click();
+                i++;
+                waiting.WaitLoadPage();
             }
         }
-        waiting.WaitLoadPage();
     }
 
     @And("select image {int} in galery")

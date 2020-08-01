@@ -14,4 +14,7 @@ public class ProductPageObject {
     public static By buyProductButton = By.xpath("//button[contains(@class,'buy__button')]");
     public static By addCart = By.xpath("//button[contains(@class,'buy')]");
 
+    public static By combColor = By.xpath("//div[contains(@class,'color-switcher__color')]");
+    public static By combColorList = By.xpath("//div[contains(@class,'color-switcher__color')]//div[@class='select__body']//span[@class='select__text']");
+
 }

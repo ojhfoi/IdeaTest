@@ -1,10 +1,14 @@
 package ojhfoi.stepdefinition;
 
+import com.codeborne.selenide.Condition;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import ojhfoi.Waiting.waiting;
 
+import java.util.concurrent.TimeUnit;
+
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static ojhfoi.tsum.pageObject.clothePage.*;
 
 /**
@@ -36,7 +40,9 @@ public class clotheAction {
      */
     @And("select jeans shorts product category")
     public void chooseJeansShorts() throws Exception{
-        $(type).click();
+        $(type).should(Condition.appear).click();
+        //omg...call js on site with delay?
+        getWebDriver().manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         waiting.WaitLoadPage();
     }
 

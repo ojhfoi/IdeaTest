@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
  */
 public class bagPageObject {
 
-    public static By exclusive = By.xpath("//a[contains(@title,'Эксклюзивно') and contains(@href,'/sumki')]/../../input[@type='checkbox']");
+    public static By exclusive = By.xpath("//a[contains(@title,'Эксклюзивно в ЦУМе') and contains(@href,'sumki') and contains(@class,'header')]");
     public static By sort = By.name("sort");
     public static By sortUl = By.xpath("//span[@class='select__text']");
     public static By product = By.xpath("//a[contains(@class,'product__image-wrapper')]");

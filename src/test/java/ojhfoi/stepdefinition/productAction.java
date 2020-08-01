@@ -57,10 +57,36 @@ public class productAction {
         waiting.WaitLoadPage();
     }
 
+    /**
+     * Add product in cart
+     * @throws Exception
+     */
     @And("add product in cart")
     public void addCart() throws Exception{
         $(addCart).click();
         waiting.WaitLoadPage();
+    }
+
+    /**
+     * Sometimes color filter on product page
+     * can be located in combobox.
+     * This method used for this situation
+     * @param colorName - color name for select
+     */
+    @And("select color {string} in combobox")
+    public void selectColorInComb(String colorName){
+        waiting.WaitLoadPage();
+        $(combColor).click();
+        waiting.WaitLoadPage();
+        List<WebElement> colorList = getWebDriver().findElements(combColorList);
+        if(colorList.isEmpty()){
+            System.out.println("List of color is empty!");
+        }else {
+            $$(combColorList)
+                    .findBy(Condition.text(colorName))
+                    .shouldBe(Condition.visible)
+                    .click();
+        }
     }
 
 }

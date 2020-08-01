@@ -7,11 +7,11 @@ import org.openqa.selenium.By;
  */
 public class CommonPageObject {
 
-    public static By activateFilter = By.xpath("//div[contains(@class,'filter__nav-filter')]");
+    public static By activateFilter = By.xpath("//div[contains(@class,'filter__title')]");
 
     public static By showMorePage = By.xpath("//button[@class='button']");
 
-    public static By otherFilter = By.xpath("//input[contains(@id,'additional')]");
+    public static By otherFilter = By.xpath("//label[contains(@for,'additional')]//a");
 
     public static By chooseProducts = By.xpath("//p[contains(@class,'product__description')]");
 
@@ -19,7 +19,9 @@ public class CommonPageObject {
 
     public static By filterClass = By.xpath("//a[contains(@class,'category__title')]");
 
-    public static By brand = By.xpath("//a[contains(@href,'brand')]");
+    public static By brandInput = By.xpath("//input[contains(@placeholder,'Поиск по брендам')]");
+
+    public static By brand = By.xpath("//div[contains(@class,'checkbox')]//a[contains(@href,'brand')]");
 
     public static By cart = By.xpath("//a[@title='Корзина']");
 

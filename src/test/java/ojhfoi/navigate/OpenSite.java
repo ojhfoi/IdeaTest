@@ -3,6 +3,7 @@ package ojhfoi.navigate;
 import Allert.AllertWind;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import io.cucumber.java.en.Given;
 import ojhfoi.navigate.config.config;
 import ojhfoi.tsum.pageObject.TsumMainPage;
 import org.aeonbits.owner.ConfigFactory;
@@ -17,6 +18,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class OpenSite {
 
+    @Given("Open site")
     @Test(description = "Переходим на сайт", priority = 0)
     public void OpenSite() throws Throwable{
         try {
@@ -25,7 +27,9 @@ public class OpenSite {
 
             config cfg = ConfigFactory.create(config.class);
 
-            driver.navigate().to(cfg.hostname());
+            driver.navigate().to("http://tsum.ru");
+
+            AllertWind.AlertAccept();
 
         } catch (Throwable throwable) {
             Assert.assertTrue(false, "Can't open site becouse: \n" + throwable.getCause());

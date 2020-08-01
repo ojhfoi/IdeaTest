@@ -7,6 +7,7 @@ ojhfoi.Action
 ojhfoi.habr.pageObject
 ojhfoi.navigate
 ojhfoi.navigate.config
+ojhfoi.runner
 ojhfoi.stepdefinition
 ojhfoi.tsum.pageObject
 ojhfoi.Waiting

@@ -3,6 +3,7 @@ package ojhfoi.stepdefinition;
 import com.codeborne.selenide.Condition;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
+import ojhfoi.Waiting.waiting;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -24,21 +25,23 @@ public class productAction {
      * @param b - blue color value
      */
     @And("chose color on rgb: \"[(^\")*]\", \"[(^\")*]\", \"[(^\")*]\"")
-    public void chooseColor(String r, String g, String b){
+    public void chooseColor(String r, String g, String b) throws Exception{
         List<WebElement> colorList = getWebDriver().findElements(color);
         if(colorList.isEmpty()){
             System.out.println("Product haven't any color!");
         }else{
             $$(color).filterBy(Condition.cssValue("background-color", "rgb("+r+","+g+","+b+");"));
         }
+        waiting.WaitLoadPage();
     }
 
     /**
      * Click on fast buy button on product page
      */
     @When("click fast buy product")
-    public void fastBuyProduct(){
+    public void fastBuyProduct() throws Exception{
         $(fastBuy).click();
+        waiting.WaitLoadPage();
     }
 
     /**
@@ -47,9 +50,17 @@ public class productAction {
      * @param phone - client phone
      */
     @And("insert client name \"[(^\")*]\" and client phone \"[(^\")*]\"")
-    public void fastBuyInsertData(String name, String phone){
+    public void fastBuyInsertData(String name, String phone) throws Exception{
         $(fastBuyName).sendKeys(name);
+        waiting.WaitLoadPage();
         $(fastBuyPhone).sendKeys(phone);
+        waiting.WaitLoadPage();
+    }
+
+    @And("add product in cart")
+    public void addCart() throws Exception{
+        $(addCart).click();
+        waiting.WaitLoadPage();
     }
 
 }

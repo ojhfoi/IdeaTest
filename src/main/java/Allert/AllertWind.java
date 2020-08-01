@@ -8,9 +8,7 @@ public class AllertWind {
     //Получаем текст со всплывающего таба и закрываем его
     public static void AlertAccept(){
         WaitLoadPage();
-        String text = $x("//div[contains(@class,'informer__title')]").getText();
-        System.out.println(text);
-        $x("//div[contains(@class,'name_close')]").click();
+        $x("//button[contains(@class,'__close-button')]").click();
     }
 
 }

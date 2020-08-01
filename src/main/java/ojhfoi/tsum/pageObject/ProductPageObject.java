@@ -12,5 +12,6 @@ public class ProductPageObject {
     public static By fastBuyName = By.xpath("//input[@formcontrolname='clientName']");
     public static By fastBuyPhone = By.xpath("//input[@formcontrolname='clientPhone']");
     public static By buyProductButton = By.xpath("//button[contains(@class,'buy__button')]");
+    public static By addCart = By.xpath("//button[contains(@class,'buy')]");
 
 }

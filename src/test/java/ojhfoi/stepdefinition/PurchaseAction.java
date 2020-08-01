@@ -17,8 +17,8 @@ public class PurchaseAction {
      * @param phone - buyer phone
      * @param email - buyer email
      */
-    @And("inser buyer data")
-    public void InsertPurchaseData(String name, String surName, String phone, String email){
+    @And("insert buyer name {word}, surname {word}, phone {string}, email {string}")
+    public void InsertPurchaseData(String name, String surName, String phone, String email) throws Exception{
         $(buyerName).sendKeys(name);
         $(buyerSurName).sendKeys(surName);
         $(buyerPhone).sendKeys(phone);

@@ -1,7 +1,7 @@
 package ojhfoi.stepdefinition;
 
 import com.codeborne.selenide.Condition;
-import cucumber.api.java.en.And;
+import io.cucumber.java.en.And;
 import ojhfoi.Waiting.waiting;
 
 import static com.codeborne.selenide.Selenide.$;

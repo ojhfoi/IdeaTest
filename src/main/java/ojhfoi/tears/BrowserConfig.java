@@ -1,9 +1,11 @@
 package ojhfoi.tears;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
 import com.codeborne.selenide.testng.SoftAsserts;
 import com.codeborne.selenide.webdriver.WebDriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.qameta.allure.selenide.AllureSelenide;
 import listener.testListener;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Listeners;
@@ -24,6 +26,9 @@ public class BrowserConfig extends WebDriverFactory {
 //        }
         String br = "CHROME";
         setWebDriver(browser.valueOf(br).create());
+
+        SelenideLogger.addListener(
+                "AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
     }
 
     @After

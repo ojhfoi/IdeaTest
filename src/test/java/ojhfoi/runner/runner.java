@@ -10,7 +10,7 @@ import org.testng.annotations.Listeners;
         features = "src/test/resources",
         glue = {"ojhfoi.stepdefinition", "ojhfoi.navigate", "ojhfoi.tears"},
         tags = "",
-        plugin = {"pretty"}
+        plugin = {"progress"}
 )
 @Listeners({testListener.class, SoftAsserts.class})
 public class runner extends AbstractTestNGCucumberTests {

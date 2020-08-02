@@ -4,7 +4,11 @@ node{
 
     properties(
             [parameters(
-                    [choice(choices: ['@tsum_gift', '@tsum_bag', '@tsum_shoes', '@tsum_clothe', '@tsum_accessory'], description: '', name: 'tags')
+                    [choice(
+                            choices:
+                                    ['@tsum_gift', '@tsum_bag', '@tsum_shoes', '@tsum_clothe', '@tsum_accessory', '@tsum_mennew', '@tsum_glass', '@tsum_cabinet',
+                                    '@tsum_cart', '@tsum_promo'],
+                            description: '', name: 'tags')
                     ])
             ])
 

@@ -10,7 +10,7 @@ import org.testng.annotations.Listeners;
         features = "src/test/resources",
         glue = {"ojhfoi.stepdefinition", "ojhfoi.navigate", "ojhfoi.tears"},
         tags = "@tsum_gift",
-        plugin = {"pretty", "io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm"},
+        plugin = {"pretty"},
         monochrome = true
 )
 @Listeners({testListener.class, SoftAsserts.class})

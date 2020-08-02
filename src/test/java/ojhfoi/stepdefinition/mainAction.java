@@ -1,5 +1,6 @@
 package ojhfoi.stepdefinition;
 
+import com.codeborne.selenide.Condition;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,7 +19,7 @@ public class mainAction {
     /**
      * change gender category for goods
      */
-    @And("change goods category")
+    @And("change goods category by gender")
     public void changeGender() throws Exception{
         $(gender).click();
         waiting.WaitLoadPage();
@@ -73,11 +74,11 @@ public class mainAction {
      * search goods in search bar
      * @param text - what's good we search
      */
-    @And("search good \"([^\"]*)\"")
+    @And("search good {string}")
     public void search(String text) throws Exception{
-        $(search).click();
+        $(searchActivate).should(Condition.appear).click();
         waiting.WaitLoadPage();
-        $(search).sendKeys(text, Keys.ENTER);
+        $(searchInput).should(Condition.appear).sendKeys(text, Keys.ENTER);
         waiting.WaitLoadPage();
     }
 

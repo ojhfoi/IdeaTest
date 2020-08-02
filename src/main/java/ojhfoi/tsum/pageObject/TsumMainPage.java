@@ -16,7 +16,8 @@ public class TsumMainPage {
     public static By bag = By.xpath("//a[@title='Сумки']");
     public static By accessory = By.xpath("//a[@title='Аксессуары']");
     public static By newGoods = By.xpath("//a[@title='Новинки']");
-    public static By search = By.xpath("//input[@name='q']");
+    public static By searchActivate = By.xpath("//div[contains(@class,'field_view_search')]");
+    public static By searchInput = By.xpath("//input[@name='q']");
     public static By userCab = By.xpath("//a[@href='/login/']");
     public static By giftCard = By.xpath("//a[@title='Подарочные карты']");
 

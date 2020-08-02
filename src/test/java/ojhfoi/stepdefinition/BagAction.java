@@ -7,6 +7,7 @@ import ojhfoi.Waiting.waiting;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -45,6 +46,7 @@ public class BagAction {
      */
     @Then("choose products on page by {int} number")
     public void ChooseProductByNum(int productNum) throws Exception{
+        getWebDriver().manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         waiting.WaitLoadPage();
         List<WebElement> productList = getWebDriver().findElements(product);
         if (productList.isEmpty()){

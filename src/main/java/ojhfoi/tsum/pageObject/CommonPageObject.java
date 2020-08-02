@@ -9,7 +9,7 @@ public class CommonPageObject {
 
     public static By activateFilter = By.xpath("//div[contains(@class,'filter__title')]");
 
-    public static By showMorePage = By.xpath("//button[@class='button']");
+    public static By showMorePage = By.xpath("//div[contains(@class,'showmore')]//button");
 
     public static By otherFilter = By.xpath("//label[contains(@for,'additional')]//a");
 
@@ -24,6 +24,5 @@ public class CommonPageObject {
     public static By brand = By.xpath("//div[contains(@class,'checkbox')]//a[contains(@href,'brand')]");
 
     public static By cart = By.xpath("//a[@title='Корзина']");
-
 
 }

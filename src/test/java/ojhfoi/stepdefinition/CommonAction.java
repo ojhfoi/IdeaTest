@@ -2,6 +2,7 @@ package ojhfoi.stepdefinition;
 
 import com.codeborne.selenide.Condition;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import ojhfoi.Waiting.waiting;
@@ -62,15 +63,16 @@ public class CommonAction {
      * Choose filter on page. Filter as men, women, child or etc
      * @param filterName - filter name
      */
-    @Then("click on filter \"([^\"]*)\"")
+    @Then("click on gender {string} filter")
     public void chooseFilterClass(String filterName) throws Exception{
+        waiting.WaitLoadPage();
         List<WebElement> filterList = getWebDriver().findElements(filterClass);
         if(filterList.isEmpty()){
             System.out.println("Filter is empty");
         }else {
-            $$(filterClass).findBy(Condition.text(filterName)).click();
+            $$(filterClass).findBy(Condition.attribute("title", filterName)).click();
+            waiting.WaitLoadPage();
         }
-        waiting.WaitLoadPage();
     }
 
     /**
@@ -108,6 +110,7 @@ public class CommonAction {
                     .scrollIntoView(false)
                     .should(Condition.appear)
                     .click();
+            getWebDriver().manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             waiting.WaitLoadPage();
         }
     }
@@ -151,6 +154,17 @@ public class CommonAction {
                     .click();
             waiting.WaitLoadPage();
         }
+    }
+
+    /**
+     * Click show more product
+     */
+    @Given("click on show more product")
+    public void showMoreProduct() throws Exception{
+        waiting.WaitLoadPage();
+        $(showMorePage).scrollTo().
+                shouldBe(Condition.appear).click();
+        waiting.WaitLoadPage();
     }
 
 }

@@ -6,5 +6,5 @@ Feature: Check Gift card
     Then choose gift card product
     And select image 3 in galery
     And select summ "300000 ₽" on gift card
-    Then add product in cart
+    Then buy gift card
     And insert buyer name "lkuert", surname "ojhfoi", phone "+71111111111", email "ojhfoi@email.ru"

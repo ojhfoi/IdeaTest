@@ -43,4 +43,10 @@ public class giftCardAction {
         waiting.WaitLoadPage();
     }
 
+    @And("buy gift card")
+    public void BuyGift() throws Exception{
+        $(giftBuy).should(Condition.appear).click();
+        waiting.WaitLoadPage();
+    }
+
 }

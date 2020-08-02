@@ -8,6 +8,7 @@ public class giftCardPage {
     public static By giftValue = By.xpath("//input[@type='number']");
     public static By priceOnCard = By.xpath("//div[@class='select__current']");
     public static By price = By.xpath("//li[contains(@class,'select__item')]//span");
+    public static By giftBuy = By.xpath("//div[contains(@class,'gift-buy__field')]//button");
 
 
 }

@@ -14,6 +14,7 @@ public enum browser {
             WebDriverManager.chromedriver().setup();
             ChromeOptions ch = new ChromeOptions();
             ch.addArguments("--incognito", "--window-size=1280,1024");
+            ch.addArguments("--headless");
             return new ChromeDriver(ch);
         }
     },
@@ -23,6 +24,7 @@ public enum browser {
             WebDriverManager.firefoxdriver().setup();
             FirefoxOptions fo = new FirefoxOptions();
             fo.addArguments("--private", "--window-size=1280,1024");
+            fo.addArguments("--headless");
             return new FirefoxDriver(fo);
         }
     };

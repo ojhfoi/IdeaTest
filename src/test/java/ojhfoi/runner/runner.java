@@ -13,7 +13,7 @@ import org.testng.annotations.*;
 @CucumberOptions(
         features = "src/test/resources",
         glue = {"ojhfoi.stepdefinition", "ojhfoi.navigate", "ojhfoi.tears"},
-        tags = "@tsum_gift",
+        tags = "",
         plugin = {"pretty", "json:result/report/report.json"}
 )
 @Listeners({testListener.class, SoftAsserts.class})

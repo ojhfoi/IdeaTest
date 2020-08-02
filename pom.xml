@@ -37,11 +37,14 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire.version}</version>
                 <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                     <systemPropertyVariables>
                         <allure.link.mylink.pattern>https://testrail-url?/cases/view/{}</allure.link.mylink.pattern>
                         <allure.link.issue.pattern>https://jira-url/{}</allure.link.issue.pattern>
                         <allure.link.tms.pattern>https://to.define/{}</allure.link.tms.pattern>
-                        <allure.results.directory>${project.build.directory}/target/allure-results</allure.results.directory>
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                     </systemPropertyVariables>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"

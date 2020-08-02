@@ -9,8 +9,9 @@ import org.testng.annotations.Listeners;
 @CucumberOptions(
         features = "src/test/resources",
         glue = {"ojhfoi.stepdefinition", "ojhfoi.navigate", "ojhfoi.tears"},
-        tags = "",
-        plugin = {"progress"}
+        tags = "@tsum_gift",
+        plugin = {"pretty"},
+        monochrome = true
 )
 @Listeners({testListener.class, SoftAsserts.class})
 public class runner extends AbstractTestNGCucumberTests {

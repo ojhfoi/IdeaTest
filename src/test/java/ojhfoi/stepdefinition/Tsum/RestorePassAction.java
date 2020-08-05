@@ -1,4 +1,4 @@
-package ojhfoi.stepdefinition;
+package ojhfoi.stepdefinition.Tsum;
 
 import com.codeborne.selenide.Condition;
 import io.cucumber.java.en.And;

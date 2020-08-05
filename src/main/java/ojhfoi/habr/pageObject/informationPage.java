@@ -2,6 +2,9 @@ package ojhfoi.habr.pageObject;
 
 import org.openqa.selenium.By;
 
+/**
+ * Element of information page
+ */
 public class informationPage {
 
     public static By carmaLink = By.xpath("//a[@title='Карма, рейтинг и вклад']"); //not used

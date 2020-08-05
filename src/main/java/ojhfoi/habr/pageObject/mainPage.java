@@ -2,10 +2,14 @@ package ojhfoi.habr.pageObject;
 
 import org.openqa.selenium.By;
 
+/**
+ * Page Element on main habr page
+ */
 public class mainPage {
 
     public static By login = By.xpath("//a[@id='login']");
     public static By search = By.xpath("//button[@id='search-form-btn']");
+    public static By searchInput = By.xpath("//input[@name='q']");
     public static By lang = By.xpath("//button[contains(@class,'js-show_lang_setting')]");
     public static By links = By.xpath("//ul[@id='navbar-links']");
     public static By changeHabr = By.xpath("//span[@id='dropdown-control']");

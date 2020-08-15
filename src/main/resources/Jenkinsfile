@@ -45,6 +45,6 @@ node{
         }
     }
     stage('Send mail'){
-
+        emailext attachLog: true, body: '', compressLog: true, subject: 'Jenkins build log', to: 'gabov.roman@gmail.com'
     }
 }

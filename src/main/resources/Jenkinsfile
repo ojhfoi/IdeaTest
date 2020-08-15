@@ -55,4 +55,13 @@ node{
 
         slackSend channel: '#IdeaTest', message: "${env.BUILD_NUBMER} is finished with result: ${currentBuild.currentResult}", teamDomain: 'ojhfoi', tokenCredentialId: 'bbcf9d91-6eae-4d6d-b06d-98f95e36723a'
     }
+    stage('clean and update'){
+        checkout(
+                [$class: 'GitSCM', branches: [[name: '*/lessob-tsum']],
+                 doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CleanBeforeCheckout',
+                                                                         deleteUntrackedNestedRepositories: true]],
+                 submoduleCfg: [],
+                 userRemoteConfigs: [[credentialsId: 'e2497f2b-f8b6-4edc-ad90-b8e335836e28',
+                                      url: 'https://github.com/ojhfoi/IdeaTest.git']]])
+    }
 }

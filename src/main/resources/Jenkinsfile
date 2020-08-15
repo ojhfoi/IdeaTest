@@ -46,7 +46,7 @@ node{
     }
     stage('Send notification'){
         emailext attachLog: true, body: "Job with number: ${env.BUILD_NUMBER} finish execution with result: ${currentBuild.currentResult}. " +
-                "Code take from: ${scm.branches[0].name}. \n More info on ${JOB_URL}", recipientProviders: [buildUser()], subject: "Jenkins ${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}!"
+                "Code take from: ${scm.branches[0].name}. \n More info on ${JOB_URL}", recipientProviders: [buildUser()], subject: "Jenkins notife mail - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}!"
 
         slackSend channel: '#IdeaTest'
     }

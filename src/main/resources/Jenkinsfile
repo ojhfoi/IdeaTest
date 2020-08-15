@@ -48,6 +48,6 @@ node{
         emailext attachLog: true, body: "Job with number: ${env.BUILD_NUMBER} finish execution with result: ${currentBuild.currentResult}. " +
                 "Code take from: ${scm.branches[0].name}. \n More info on ${JOB_URL}", recipientProviders: [buildUser()], subject: "Jenkins ${env.PROJECT_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}!"
 
-        slackSend channel: '#ideatest'
+        slackSend channel: '#IdeaTest', message: 'test', teamDomain: 'ojhfoi', tokenCredentialId: 'bbcf9d91-6eae-4d6d-b06d-98f95e36723a'
     }
 }

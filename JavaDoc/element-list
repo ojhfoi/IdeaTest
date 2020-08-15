@@ -1,13 +1,8 @@
 Allert
-check
-DB
 listener
-ojhfoi.Action
-ojhfoi.habr.pageObject
 ojhfoi.navigate
 ojhfoi.navigate.config
 ojhfoi.runner
-ojhfoi.stepdefinition.Habr
 ojhfoi.stepdefinition.Tsum
 ojhfoi.tears
 ojhfoi.tsum.pageObject

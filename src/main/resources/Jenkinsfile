@@ -44,4 +44,7 @@ node{
             echo"Error in report generation!"
         }
     }
+    stage('Send mail'){
+
+    }
 }

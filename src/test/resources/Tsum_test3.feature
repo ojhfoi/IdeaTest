@@ -1,3 +1,4 @@
+@all
 @tsum_shoes
   
   Feature: Check Shoes product category

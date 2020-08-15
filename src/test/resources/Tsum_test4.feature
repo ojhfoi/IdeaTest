@@ -1,3 +1,4 @@
+@all
 @tsum_clothe
 
   Feature: Check clothe product

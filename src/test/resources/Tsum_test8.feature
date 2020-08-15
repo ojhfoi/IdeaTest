@@ -1,3 +1,4 @@
+@all
 @tsum_cabinet
   Feature: Check user personal cabinet
     Scenario: Check personal cabinet

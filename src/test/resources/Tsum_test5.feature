@@ -1,3 +1,4 @@
+@all
 @tsum_accessory
   Feature: Check accessory product
     Scenario: Check accessory product category

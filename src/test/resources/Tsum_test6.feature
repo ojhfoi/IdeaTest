@@ -1,3 +1,4 @@
+@all
 @tsum_mennew
   Feature: Check new products for men
 

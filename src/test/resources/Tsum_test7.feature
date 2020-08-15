@@ -1,3 +1,4 @@
+@all
 @tsum_glass
   Feature: Search sunglasses in men product category
     Scenario: search sunglasses

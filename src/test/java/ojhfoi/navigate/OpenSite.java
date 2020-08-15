@@ -1,15 +1,25 @@
 package ojhfoi.navigate;
 
 import Allert.AllertWind;
+import DB.model.Testdata;
+import DB.repository.TestdataCrudRepository;
+import DB.service.TestdataService;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.cucumber.java.en.Given;
+import ojhfoi.JpaConfig;
 import ojhfoi.navigate.config.config;
-import ojhfoi.tsum.pageObject.TsumMainPage;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.lang.reflect.Array;
+import java.util.List;
+import java.util.Optional;
 
 import static ojhfoi.Waiting.waiting.WaitLoadPage;
 import static check.myElemCheck.myCheck;
@@ -18,10 +28,16 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class OpenSite {
 
+
     @Given("Open site")
-    @Test(description = "Переходим на сайт", priority = 0)
+    @Test(description = "Переходим на сайт")
     public void OpenSite() throws Throwable{
         try {
+
+            TestdataService testdataService = new TestdataService();
+            Testdata testdata = testdataService.TestdataCrudFindByTag("habr");
+
+            System.out.println(testdata.getUrl());
 
             WebDriver driver = getWebDriver();
 

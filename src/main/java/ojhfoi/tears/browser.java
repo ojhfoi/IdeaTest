@@ -1,3 +1,5 @@
+package ojhfoi.tears;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,7 +13,8 @@ public enum browser {
         public WebDriver create(){
             WebDriverManager.chromedriver().setup();
             ChromeOptions ch = new ChromeOptions();
-            ch.addArguments("--incognito", "--window-size=1280,1024");
+            ch.addArguments("--incognito", "--window-size=1280,1024", "--no-sandbox");
+            ch.addArguments("--headless");
             return new ChromeDriver(ch);
         }
     },
@@ -20,7 +23,8 @@ public enum browser {
         public WebDriver create(){
             WebDriverManager.firefoxdriver().setup();
             FirefoxOptions fo = new FirefoxOptions();
-            fo.addArguments("--private", "--window-size=1280,1024");
+            fo.addArguments("--private", "--window-size=1280,1024", "--no-sandbox");
+            fo.addArguments("--headless");
             return new FirefoxDriver(fo);
         }
     };

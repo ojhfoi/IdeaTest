@@ -45,6 +45,6 @@ node{
         }
     }
     stage('Send mail'){
-        emailext attachLog: true, body: 'test', recipientProviders: [buildUser()], subject: 'Jenkins build log'
+        emailext attachLog: true, body: "Job with number: ${env.BUILD_NUMBER} finish execution with result: ${currentBuild.currentBResult}. Code take from: ${env.BRANCH_NAME}", recipientProviders: [buildUser()], subject: 'Jenkins build log'
     }
 }

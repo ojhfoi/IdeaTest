@@ -45,6 +45,6 @@ node{
         }
     }
     stage('Send mail'){
-        emailext attachLog: true, body: 'test', recipientProviders: [$class: 'RequesterRecipientProvider'], subject: 'Jenkins build log'
+        emailext attachLog: true, body: 'test', recipientProviders: [buildUser()], subject: 'Jenkins build log'
     }
 }

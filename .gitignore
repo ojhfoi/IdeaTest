@@ -6,6 +6,8 @@
 target/*
 allure-results/*.json
 test-output/*
+beuild/*
+result/*
 
 # BlueJ files
 *.ctxt
@@ -21,6 +23,7 @@ test-output/*
 *.zip
 *.tar.gz
 *.rar
+.allure
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*

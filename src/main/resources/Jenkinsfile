@@ -10,7 +10,11 @@ node{
                                     '@tsum_cart', '@tsum_promo'],
                             description: '', name: 'tags')
                     ])
-            ])
+            ],
+            [pipelineTriggers([cron('0 1 * * * ')])],
+            [buildDiscarder(
+                    logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '10', numToKeepStr: '10'))]
+    )
 
 
     stage("checkout"){

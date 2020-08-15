@@ -6,7 +6,7 @@ node{
             [parameters(
                     [choice(
                             choices:
-                                    ['@tsum_gift', '@tsum_bag', '@tsum_shoes', '@tsum_clothe', '@tsum_accessory', '@tsum_mennew', '@tsum_glass', '@tsum_cabinet',
+                                    ['@all', '@tsum_gift', '@tsum_bag', '@tsum_shoes', '@tsum_clothe', '@tsum_accessory', '@tsum_mennew', '@tsum_glass', '@tsum_cabinet',
                                     '@tsum_cart', '@tsum_promo'],
                             description: '', name: 'tags')
                     ])
@@ -45,6 +45,6 @@ node{
         }
     }
     stage('Send mail'){
-        emailext attachLog: true, body: "Job with number: ${env.BUILD_NUMBER} finish execution with result: ${currentBuild.currentResult}. Code take from: ${GIT_BRANCH}. \n More info on ${JOB_URL}", recipientProviders: [buildUser()], subject: 'Jenkins build log'
+        emailext attachLog: true, body: "Job with number: ${env.BUILD_NUMBER} finish execution with result: ${currentBuild.currentResult}. Code take from: ${scm.branches[0].name}. \n More info on ${JOB_URL}", recipientProviders: [buildUser()], subject: 'Jenkins build log'
     }
 }

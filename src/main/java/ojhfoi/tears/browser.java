@@ -14,7 +14,7 @@ public enum browser {
             WebDriverManager.chromedriver().setup();
             ChromeOptions ch = new ChromeOptions();
             ch.addArguments("--incognito", "--window-size=1280,1024", "--no-sandbox");
-            ch.addArguments("--headless");
+//            ch.addArguments("--headless");
             return new ChromeDriver(ch);
         }
     },
